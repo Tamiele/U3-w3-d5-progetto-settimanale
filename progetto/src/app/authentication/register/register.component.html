@@ -1,0 +1,49 @@
+<main>
+  <div class="container">
+    <form #form="ngForm">
+      <input
+        type="text"
+        class="form-control mb-3"
+        placeholder="Nome"
+        name="nome"
+        #nome="ngModel"
+        ngModel
+        required
+      />
+      <input
+        type="text"
+        class="form-control mb-3"
+        placeholder="Cognome"
+        name="cognome"
+        #cognome="ngModel"
+        ngModel
+        required
+      />
+      <input
+        type="email"
+        class="form-control mb-3"
+        placeholder="Email"
+        name="email"
+        #email="ngModel"
+        ngModel
+        required
+      />
+      <input
+        type="password"
+        class="form-control mb-3"
+        placeholder="Password"
+        name="password"
+        #password="ngModel"
+        ngModel
+        required
+      />
+      <button
+        [disabled]="form.invalid"
+        (click)="register(form)"
+        class="btn btn-warning w-100 py-2 fw-bold"
+      >
+        Registrati
+      </button>
+    </form>
+  </div>
+</main>

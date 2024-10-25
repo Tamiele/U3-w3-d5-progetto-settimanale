@@ -1,0 +1,26 @@
+<main class="d-flex flex-column align-items-center">
+  <div class="container">
+    <div class="row">
+      <div
+        *ngFor="let movie of arrMovie"
+        class="col col-12 col-md-6 col-lg-4 my-2"
+      >
+        <div class="card position-relative h-100 shadow">
+          <img [src]="movie.img" class="card-img-top h-75" alt="img.movie" />
+
+          <span class="badge bg-danger position-absolute top-0 end-0 m-2">{{
+            movie.categoria
+          }}</span>
+
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.titolo }}</h5>
+            <p class="card-text">{{ movie.descrizione }}</p>
+            <button (click)="addFavorite(movie.id)" class="btn btn-success">
+              Add Favorite
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

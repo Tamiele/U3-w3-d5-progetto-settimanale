@@ -1,0 +1,69 @@
+<header class="position-sticky top-0 z-3">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark custom-pills">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img
+          src="logoApp.webp"
+          alt="Logo"
+          class="d-inline-block align-text-top img-fluid"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul *ngIf="isLoggedIn" class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a
+              routerLink="/home"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="nav-link px-2 text-light"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              routerLink="/account"
+              routerLinkActive="active"
+              class="nav-link px-2 text-light"
+            >
+              Account
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="text-end">
+        <a
+          *ngIf="!isLoggedIn"
+          routerLink="/authentication/login"
+          type="button"
+          class="btn btn-outline-light me-2"
+          >Login</a
+        >
+        <a
+          *ngIf="!isLoggedIn"
+          routerLink="/authentication/register"
+          type="button"
+          class="btn btn-outline-warning"
+          >Sign-up</a
+        >
+        <button
+          *ngIf="isLoggedIn"
+          (click)="logout()"
+          class="btn btn-outline-warning ms-1"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>

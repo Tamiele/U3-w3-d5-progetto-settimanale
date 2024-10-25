@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "email": "Tammaro_85@hotmail.it",
+      "password": "$2a$10$43gjSyed2zeBet51NZo5gewu6pJOlpq3Ub5Xi7J/zgXEwK9MryNAu",
+      "nome": "Tammaro",
+      "cognome": "Miele",
+      "id": 1
+    },
+    {
+      "email": "giuseppemiele1@hotmail.it",
+      "password": "$2a$10$XTQ57NcHk8GEY/u7/WDlZOOaGEOUss2Y62tsZtinlmmQWHGhHFMeC",
+      "nome": "Giuseppe",
+      "cognome": "Miele",
+      "id": 2
+    },
+    {
+      "email": "asdasda@hotmail.it",
+      "password": "$2a$10$2GmA8RW1akFEavdtamogbOqgEKDDcMVLI74texNtRl8Zj8EIS0UGq",
+      "nome": "asdaasd",
+      "cognome": "asddaasd",
+      "id": 3
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "titolo": "Inception",
+      "anno_di_uscita": 2010,
+      "categoria": "Sci-Fi",
+      "descrizione": "Un ladro entra nei sogni per impiantare un'idea nella mente di un miliardario.",
+      "img": "https://pad.mymovies.it/filmclub/2009/03/027/locandinapg22.jpg"
+    },
+    {
+      "id": 2,
+      "titolo": "Il Padrino",
+      "anno_di_uscita": 1972,
+      "categoria": "Drammatico",
+      "descrizione": "La storia epica di una famiglia mafiosa italo-americana.",
+      "img": "https://i.etsystatic.com/43710319/r/il/1fb162/6066629614/il_570xN.6066629614_s3fc.jpg"
+    },
+    {
+      "id": 3,
+      "titolo": "The Dark Knight",
+      "anno_di_uscita": 2008,
+      "categoria": "Azione",
+      "descrizione": "Batman affronta il Joker in una lotta per l'anima di Gotham City.",
+      "img": "https://play-lh.googleusercontent.com/qhfncXOqccJ5Y_IBPaRy0O79QZQDl7L5FyKQAsLFICt8c9-2Vfmqd2bniAPESto0ZmSLTOzjl-o1F_jgb2Nr"
+    },
+    {
+      "id": 4,
+      "titolo": "Pulp Fiction",
+      "anno_di_uscita": 1994,
+      "categoria": "Crimine",
+      "descrizione": "Storie intrecciate di crimine e redenzione nella Los Angeles underground.",
+      "img": "https://static.posters.cz/image/750/1288.jpg"
+    },
+    {
+      "id": 5,
+      "titolo": "La La Land",
+      "anno_di_uscita": 2016,
+      "categoria": "Musical",
+      "descrizione": "Un'attrice e un musicista si innamorano a Los Angeles cercando il successo.",
+      "img": "https://m.media-amazon.com/images/I/81pck0VNp7L._AC_UF1000,1000_QL80_.jpg"
+    }
+  ],
+  "favorite": [
+    {
+      "utenteId": 1,
+      "filmId": 3,
+      "id": 1
+    },
+    {
+      "utenteId": 1,
+      "filmId": 2,
+      "id": 2
+    },
+    {
+      "utenteId": 1,
+      "filmId": 3,
+      "id": 3
+    }
+  ]
+}
