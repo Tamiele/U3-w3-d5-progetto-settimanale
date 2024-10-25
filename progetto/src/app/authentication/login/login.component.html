@@ -1,11 +1,11 @@
-<main class="vh-100 d-flex flex-column align-items-center">
-  <div class="card bg-dark bg-opacity-75 w-50 d-flex flex-column">
+<main class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card bg-dark bg-opacity-75 w-50 d-flex flex-column fade-in">
     <div class="container">
       <h3 class="text-center text-light p-1">Log in with your credentials</h3>
       <form #form="ngForm">
         <input
           type="email"
-          class="form-control mb-3"
+          class="form-control mb-3 smaller-input"
           placeholder="Email"
           name="email"
           #email="ngModel"
@@ -14,7 +14,7 @@
         />
         <input
           type="password"
-          class="form-control mb-3"
+          class="form-control mb-3 smaller-input"
           placeholder="Password"
           name="password"
           #password="ngModel"
@@ -24,7 +24,7 @@
         <button
           (click)="login(form)"
           [disabled]="form.invalid"
-          class="btn btn-success"
+          class="btn btn-success my-3"
         >
           log in
         </button>

@@ -23,7 +23,7 @@ export class MovieService {
   }
 
   userFavoriteMovie(userId: number): Observable<iFavorite[]> {
-    return this.http.get<iFavorite[]>(`${this.favoriteUrl}?userId=${userId}`);
+    return this.http.get<iFavorite[]>(`${this.favoriteUrl}?utenteId=${userId}`);
   }
 
   detailMovie(movieId: number): Observable<imovie> {
@@ -31,9 +31,8 @@ export class MovieService {
   }
 
   searchFavorite(userId: number, movieId: number): Observable<iFavorite[]> {
-    console.log(`Ricerca preferiti per userId=${userId} e movieId=${movieId}`);
     return this.http.get<iFavorite[]>(
-      `${this.favoriteUrl}?userId=${userId}&movieId=${movieId}`
+      `${this.favoriteUrl}?utenteId=${userId}&filmId=${movieId}`
     );
   }
 

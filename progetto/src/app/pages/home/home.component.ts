@@ -53,6 +53,7 @@ export class HomeComponent implements OnInit {
 
     this.movieSvc.addFavorite(favorito).subscribe(() => {
       this.recuperaFavorite(this.user!.id);
+      console.log('Navigazione verso account');
       this.router.navigate(['/account', { movieId: idMovie }]);
     });
   }

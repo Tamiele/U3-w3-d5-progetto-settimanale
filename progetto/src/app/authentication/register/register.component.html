@@ -1,49 +1,52 @@
-<main>
-  <div class="container">
-    <form #form="ngForm">
-      <input
-        type="text"
-        class="form-control mb-3"
-        placeholder="Nome"
-        name="nome"
-        #nome="ngModel"
-        ngModel
-        required
-      />
-      <input
-        type="text"
-        class="form-control mb-3"
-        placeholder="Cognome"
-        name="cognome"
-        #cognome="ngModel"
-        ngModel
-        required
-      />
-      <input
-        type="email"
-        class="form-control mb-3"
-        placeholder="Email"
-        name="email"
-        #email="ngModel"
-        ngModel
-        required
-      />
-      <input
-        type="password"
-        class="form-control mb-3"
-        placeholder="Password"
-        name="password"
-        #password="ngModel"
-        ngModel
-        required
-      />
-      <button
-        [disabled]="form.invalid"
-        (click)="register(form)"
-        class="btn btn-warning w-100 py-2 fw-bold"
-      >
-        Registrati
-      </button>
-    </form>
+<main class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card bg-dark bg-opacity-75 w-50 d-flex flex-column fade-in">
+    <h2 class="text-center text-light p-3">Register to view content</h2>
+    <div class="container">
+      <form #form="ngForm">
+        <input
+          type="text"
+          class="form-control mb-3 smaller-input"
+          placeholder="Name"
+          name="nome"
+          #nome="ngModel"
+          ngModel
+          required
+        />
+        <input
+          type="text"
+          class="form-control mb-3 smaller-input"
+          placeholder="Surname"
+          name="cognome"
+          #cognome="ngModel"
+          ngModel
+          required
+        />
+        <input
+          type="email"
+          class="form-control mb-3 smaller-input"
+          placeholder="Email"
+          name="email"
+          #email="ngModel"
+          ngModel
+          required
+        />
+        <input
+          type="password"
+          class="form-control mb-3 smaller-input"
+          placeholder="Password"
+          name="password"
+          #password="ngModel"
+          ngModel
+          required
+        />
+        <button
+          [disabled]="form.invalid"
+          (click)="register(form)"
+          class="btn btn-warning w-100 my-3 fw-bold"
+        >
+          Sign In
+        </button>
+      </form>
+    </div>
   </div>
 </main>
