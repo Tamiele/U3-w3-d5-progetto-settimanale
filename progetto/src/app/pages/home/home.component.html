@@ -49,9 +49,9 @@
     <div class="row mt-3" *ngIf="showMovies">
       <div
         *ngFor="let movie of arrMovie"
-        class="col col-12 col-md-6 col-lg-4 my-2"
+        class="col col-12 col-md-6 col-lg-2 my-2"
       >
-        <div class="card bg-black position-relative h-100 shadow">
+        <div class="card bg-black position-relative h-100 shadow-lg">
           <img [src]="movie.img" class="card-img-top" alt="img.movie" />
           <span class="badge bg-danger position-absolute top-0 end-0 m-2">{{
             movie.categoria
