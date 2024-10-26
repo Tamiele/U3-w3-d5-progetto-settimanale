@@ -20,6 +20,34 @@
       "nome": "asdaasd",
       "cognome": "asddaasd",
       "id": 3
+    },
+    {
+      "email": "gino@gmail.it",
+      "password": "$2a$10$uVMbUZ3l80aKcMfqFwAWRehjEqto6CX7Fo2P8uEcT32vzmZgzfZky",
+      "nome": "gino",
+      "cognome": "nano",
+      "id": 4
+    },
+    {
+      "email": "gino@gmail.com",
+      "password": "$2a$10$..dI3t1icpxzYSSrmuXEVu06bfnhCP1Vqe2icgL15yPLbRUAgFjvq",
+      "nome": "gino",
+      "cognome": "nano",
+      "id": 5
+    },
+    {
+      "email": "ginonano@gggg.com",
+      "password": "$2a$10$yOuwmEwC0RbXWaMRyi7M8ugnqs/tX30ep.yIQJDgt8ZAkO6NcSbZu",
+      "nome": "gino",
+      "cognome": "nano",
+      "id": 6
+    },
+    {
+      "email": "brucoMela@sss.it",
+      "password": "$2a$10$u6bWkWMlohdQsNEJb9uP.O2VPz0CRD4Oz4VQVaWN8IO.gBUjVYE5C",
+      "nome": "bruco",
+      "cognome": "mela",
+      "id": 7
     }
   ],
   "movies": [
@@ -62,9 +90,104 @@
       "categoria": "Musical",
       "descrizione": "Un'attrice e un musicista si innamorano a Los Angeles cercando il successo.",
       "img": "https://m.media-amazon.com/images/I/81pck0VNp7L._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": 6,
+      "titolo": "The Shawshank Redemption",
+      "anno_di_uscita": 1994,
+      "categoria": "Drammatico",
+      "descrizione": "Due uomini imprigionati sviluppano un legame che dura per tutta la vita.",
+      "img": "https://i.scdn.co/image/ab67616d0000b273e710c1f5b228046932790031"
+    },
+    {
+      "id": 7,
+      "titolo": "Forrest Gump",
+      "anno_di_uscita": 1994,
+      "categoria": "Drammatico/Commedia",
+      "descrizione": "Le avventure di un uomo con un basso QI e una vita straordinaria.",
+      "img": "https://teatrosociale.it/wp-content/uploads/2021/07/Forrest_Gump_poster.jpg"
+    },
+    {
+      "id": 8,
+      "titolo": "The Matrix",
+      "anno_di_uscita": 1999,
+      "categoria": "Azione/Sci-Fi",
+      "descrizione": "Un hacker scopre la verità sulla sua realtà e la lotta contro i controllori.",
+      "img": "https://i0.wp.com/thebackdoortheatre.org/wp-content/uploads/2023/11/The_matrix.jpg?fit=374%2C560"
+    },
+    {
+      "id": 9,
+      "titolo": "Fight Club",
+      "anno_di uscita": 1999,
+      "categoria": "Drammatico/Thriller",
+      "descrizione": "Un uomo insoddisfatto della sua vita crea un club segreto di combattimento.",
+      "img": "https://m.media-amazon.com/images/I/91MBNyp411L.jpg"
+    },
+    {
+      "id": 10,
+      "titolo": "The Lord of the Rings: The Fellowship of the Ring",
+      "anno_di_uscita": 2001,
+      "categoria": "Fantasy",
+      "descrizione": "Un gruppo di eroi parte per distruggere un anello malefico.",
+      "img": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28828_p_v8_ao.jpg"
+    },
+    {
+      "id": 11,
+      "titolo": "The Social Network",
+      "anno_di_uscita": 2010,
+      "categoria": "Drammatico",
+      "descrizione": "La creazione di Facebook e le sue conseguenze.",
+      "img": "https://images.everyeye.it/img-notizie/the-social-network-copertina-sociale-total-film-83173.jpg"
+    },
+    {
+      "id": 12,
+      "titolo": "Gladiator",
+      "anno_di uscita": 2000,
+      "categoria": "Azione/Avventura",
+      "descrizione": "Un generale romano diventa schiavo e combatte per la sua libertà.",
+      "img": "https://pad.mymovies.it/filmclub/2001/01/022/locandina.jpg"
+    },
+    {
+      "id": 13,
+      "titolo": "Inglourious Basterds",
+      "anno_di uscita": 2009,
+      "categoria": "Azione/Drama",
+      "descrizione": "Un gruppo di soldati ebrei mira a vendicarsi dei nazisti.",
+      "img": "https://m.media-amazon.com/images/I/817RLrtFSdL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": 14,
+      "titolo": "Interstellar",
+      "anno_di uscita": 2014,
+      "categoria": "Sci-Fi/Avventura",
+      "descrizione": "Un viaggio nello spazio per salvare l'umanità.",
+      "img": "https://www.popoffquotidiano.it/wp-content/uploads/2014/11/interstellar_copertina.jpg"
+    },
+    {
+      "id": 15,
+      "titolo": "Parasite",
+      "anno_di uscita": 2019,
+      "categoria": "Drammatico",
+      "descrizione": "Una famiglia povera si insinua in una famiglia ricca.",
+      "img": "https://m.media-amazon.com/images/I/81cYnCyFCYL._AC_UF1000,1000_QL80_.jpg"
     }
   ],
   "favorite": [
+    {
+      "utenteId": 2,
+      "filmId": 5,
+      "id": 4
+    },
+    {
+      "utenteId": 1,
+      "filmId": 2,
+      "id": 5
+    },
+    {
+      "utenteId": 1,
+      "filmId": 1,
+      "id": 6
+    },
     {
       "utenteId": 1,
       "filmId": 3,
@@ -72,23 +195,28 @@
     },
     {
       "utenteId": 1,
-      "filmId": 3,
+      "filmId": 6,
       "id": 8
     },
     {
       "utenteId": 1,
-      "filmId": 3,
+      "filmId": 5,
       "id": 9
     },
     {
       "utenteId": 1,
-      "filmId": 3,
+      "filmId": 4,
       "id": 10
     },
     {
       "utenteId": 1,
-      "filmId": 3,
+      "filmId": 7,
       "id": 11
+    },
+    {
+      "utenteId": 1,
+      "filmId": 8,
+      "id": 12
     }
   ]
 }

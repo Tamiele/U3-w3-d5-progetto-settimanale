@@ -1,5 +1,5 @@
 main {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("/cinema.webp");
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,4 +25,8 @@ main {
 .smaller-input {
   height: 38px;
   font-size: 14px;
+}
+
+input.ng-touched.ng-invalid {
+  border: 2px solid red;
 }

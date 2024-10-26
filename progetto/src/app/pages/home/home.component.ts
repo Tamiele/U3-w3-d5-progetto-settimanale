@@ -3,7 +3,7 @@ import { MovieService } from '../movie.service';
 import { imovie } from '../../interfaces/imovie';
 import { iUser } from '../../interfaces/i-user';
 import { iFavorite } from '../../interfaces/i-favorite';
-import { Router } from '@angular/router';
+
 import { AuthenticationService } from '../../authentication/authentication.service';
 import { filter } from 'rxjs';
 
@@ -16,17 +16,18 @@ export class HomeComponent implements OnInit {
   arrMovie: imovie[] = [];
   arrFavoriteMovies: iFavorite[] = [];
   user?: iUser;
+  alertMessage: string | null = null;
+  showMovies: boolean = true;
 
   constructor(
     private movieSvc: MovieService,
-    private router: Router,
+
     private authSvc: AuthenticationService
   ) {}
 
   ngOnInit(): void {
     this.movieSvc.getMovie().subscribe((movies: imovie[]) => {
       this.arrMovie = movies;
-      console.log(this.arrMovie);
     });
 
     this.authSvc.user$.pipe(filter((u): u is iUser => !!u)).subscribe((u) => {
@@ -34,7 +35,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  recuperaFavorite(userId: number) {
+  // recuperaro i film preferiti dell'utente
+  retrieveFavorites(userId: number) {
     this.movieSvc
       .userFavoriteMovie(userId)
       .subscribe((favorito: iFavorite[]) => {
@@ -43,18 +45,27 @@ export class HomeComponent implements OnInit {
   }
   addFavorite(idMovie: number) {
     if (!this.user) {
-      console.log('impossibile aggiungere ai preferiti');
       return;
     }
-    const favorito: iFavorite = {
-      utenteId: this.user.id,
-      filmId: idMovie,
-    };
-
-    this.movieSvc.addFavorite(favorito).subscribe(() => {
-      this.recuperaFavorite(this.user!.id);
-      console.log('Navigazione verso account');
-      this.router.navigate(['/account', { movieId: idMovie }]);
-    });
+    // Controllo se il film è già nei preferiti
+    this.movieSvc
+      .searchFavorite(this.user.id, idMovie)
+      .subscribe((preferiti) => {
+        if (preferiti.length > 0) {
+          this.alertMessage = 'Questo film è già nei preferiti';
+          return;
+        }
+        // Se il film non è già nei preferiti, lo aggiungilo
+        const favorito: iFavorite = {
+          utenteId: this.user!.id,
+          filmId: idMovie,
+        };
+        this.movieSvc.addFavorite(favorito).subscribe(() => {
+          this.retrieveFavorites(this.user!.id); // Aggiorna l'elenco dei preferiti
+        });
+      });
+  }
+  toggleMovies() {
+    this.showMovies = !this.showMovies;
   }
 }

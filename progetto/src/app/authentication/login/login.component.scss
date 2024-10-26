@@ -4,6 +4,7 @@ main {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+  min-height: 100vh;
 }
 
 .fade-in {
@@ -25,5 +26,8 @@ main {
 .smaller-input {
   height: 38px;
   font-size: 14px;
-  width: 50%;
+}
+
+input.ng-touched.ng-invalid {
+  border: 2px solid red;
 }

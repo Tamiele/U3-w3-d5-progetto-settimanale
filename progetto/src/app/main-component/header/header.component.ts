@@ -8,6 +8,7 @@ import { AuthenticationService } from '../../authentication/authentication.servi
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn!: boolean;
+  isCollapsed = true;
 
   constructor(private authSvc: AuthenticationService) {}
 

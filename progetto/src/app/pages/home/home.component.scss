@@ -4,4 +4,51 @@ main {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+  min-height: 100vh;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  max-width: 340px;
+  margin: auto;
+}
+
+.card-img-top {
+  height: 280px;
+  width: 100%;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.carousel-image {
+  object-fit: contain;
+  max-height: 500px;
+  width: 300px;
+}
+
+.container-carousel {
+  opacity: 80%;
+  position: relative;
+  background-color: black;
+}
+
+.carousel-caption i {
+  font-size: 2rem;
 }

@@ -39,7 +39,6 @@ export class AuthenticationService {
   login(authenticationData: iLoginRequest) {
     return this.http.post<iAccess>(this.loginUrl, authenticationData).pipe(
       tap((accessData) => {
-        console.log('Dati di accesso ricevuti:', accessData);
         this.authSubject$.next(accessData);
 
         localStorage.setItem('accessData', JSON.stringify(accessData));
@@ -81,7 +80,7 @@ export class AuthenticationService {
       localStorage.removeItem('accessData');
       return;
     }
-    console.log('Utente trovato:', accessData.user);
+
     this.authSubject$.next(accessData);
   }
 }

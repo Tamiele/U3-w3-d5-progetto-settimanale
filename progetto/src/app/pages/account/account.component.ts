@@ -5,46 +5,39 @@ import { AuthenticationService } from '../../authentication/authentication.servi
 import { imovie } from '../../interfaces/imovie';
 import { iFavorite } from '../../interfaces/i-favorite';
 import { MovieService } from '../movie.service';
-import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrl: './account.component.scss',
+  styleUrls: ['./account.component.scss'],
 })
 export class AccountComponent implements OnInit {
   selectedProfile: iUser | null = null;
-
   arrMovie: imovie[] = [];
   arrFavoriteMovies: iFavorite[] = [];
   user!: iUser;
   userId!: number;
 
+  private subscriptions: Subscription = new Subscription();
+
   constructor(
     private offcanvasService: NgbOffcanvas,
     private authService: AuthenticationService,
-    private movieSvc: MovieService,
-    private router: ActivatedRoute
+    private movieSvc: MovieService
   ) {}
+
   ngOnInit(): void {
-    this.authService.user$.subscribe((user) => {
+    const userSubscription = this.authService.user$.subscribe((user) => {
       if (user) {
         this.user = user;
         this.userId = user.id;
-        const movieId = this.router.snapshot.paramMap.get('movieId');
-        if (movieId) {
-          console.log('Film aggiunto ai preferiti:', movieId);
-          this.movieSvc
-            .userFavoriteMovie(this.userId)
-            .subscribe((preferito: iFavorite[]) => {
-              this.arrFavoriteMovies = preferito;
-              this.stampaFavoriteMovie();
-            });
-        } else {
-          console.log('user non autenitcato');
-        }
+        this.selectedProfile = user;
+        this.retrieveFavorites();
       }
     });
+
+    this.subscriptions.add(userSubscription);
   }
 
   stampaFavoriteMovie() {
@@ -56,7 +49,7 @@ export class AccountComponent implements OnInit {
         },
         (error) => {
           console.error(
-            `Errore nel recuperare i dettagli del film con ID" ${favorito.filmId}:`,
+            `Errore nel recuperare i dettagli del film con ID ${favorito.filmId}:`,
             error
           );
         }
@@ -64,14 +57,17 @@ export class AccountComponent implements OnInit {
     );
   }
 
-  openProfileOffcanvas(content: TemplateRef<any>) {
-    this.authService.user$.subscribe((user) => {
-      console.log('Utente dal servizio:', user);
-      this.selectedProfile = user ?? null;
-    });
-    console.log(this.selectedProfile);
-
-    this.offcanvasService.open(content, { position: 'start' });
+  retrieveFavorites() {
+    this.movieSvc
+      .userFavoriteMovie(this.userId)
+      .subscribe((preferito: iFavorite[]) => {
+        this.arrFavoriteMovies = preferito;
+        if (this.arrFavoriteMovies.length > 0) {
+          this.stampaFavoriteMovie();
+        } else {
+          console.log('Nessun film preferito trovato.');
+        }
+      });
   }
 
   removeFavorite(filmId: number) {
@@ -86,12 +82,12 @@ export class AccountComponent implements OnInit {
               (fav) => fav.filmId !== filmId
             );
           },
-
-          complete: () => {
-            console.log('Operazione di rimozione completata.');
-          },
         });
       }
     });
+  }
+
+  openProfileOffcanvas(content: TemplateRef<any>) {
+    this.offcanvasService.open(content, { position: 'start' });
   }
 }

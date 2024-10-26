@@ -1,47 +1,122 @@
 <main class="d-flex justify-content-center align-items-center vh-100">
   <div class="card bg-dark bg-opacity-75 w-50 d-flex flex-column fade-in">
-    <h2 class="text-center text-light p-3">Register to view content</h2>
+    <h2
+      class="text-center text-warning border rounded-top-1 border-warning p-3"
+    >
+      Register to view content
+    </h2>
     <div class="container">
-      <form #form="ngForm">
+      <form [formGroup]="registerForm">
         <input
           type="text"
           class="form-control mb-3 smaller-input"
           placeholder="Name"
-          name="nome"
-          #nome="ngModel"
-          ngModel
+          formControlName="nome"
           required
         />
+        <div
+          *ngIf="
+            registerForm.get('nome')?.touched &&
+            registerForm.get('nome')?.invalid
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="registerForm.get('nome')?.errors?.['required']"
+          >
+            Name is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="registerForm.get('nome')?.errors?.['minlength']"
+          >
+            Name must be at least 4 characters long
+          </small>
+        </div>
+
         <input
           type="text"
           class="form-control mb-3 smaller-input"
           placeholder="Surname"
-          name="cognome"
-          #cognome="ngModel"
-          ngModel
+          formControlName="cognome"
           required
         />
+        <div
+          *ngIf="
+            registerForm.get('cognome')?.touched &&
+            registerForm.get('cognome')?.invalid
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="registerForm.get('cognome')?.errors?.['required']"
+          >
+            Surname is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="registerForm.get('cognome')?.errors?.['minlength']"
+          >
+            Surname must be at least 2 characters long
+          </small>
+        </div>
+
         <input
           type="email"
           class="form-control mb-3 smaller-input"
           placeholder="Email"
-          name="email"
-          #email="ngModel"
-          ngModel
+          formControlName="email"
           required
         />
+        <div
+          *ngIf="
+            registerForm.get('email')?.touched &&
+            registerForm.get('email')?.invalid
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="registerForm.get('email')?.errors?.['required']"
+          >
+            Email is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="registerForm.get('email')?.errors?.['email']"
+          >
+            Please enter a valid email
+          </small>
+        </div>
+
         <input
           type="password"
           class="form-control mb-3 smaller-input"
           placeholder="Password"
-          name="password"
-          #password="ngModel"
-          ngModel
+          formControlName="password"
           required
         />
+        <div
+          *ngIf="
+            registerForm.get('password')?.touched &&
+            registerForm.get('password')?.invalid
+          "
+        >
+          <small
+            class="text-danger"
+            *ngIf="registerForm.get('password')?.errors?.['required']"
+          >
+            Password is required
+          </small>
+          <small
+            class="text-danger"
+            *ngIf="registerForm.get('password')?.errors?.['minlength']"
+          >
+            Password must be at least 8 characters long
+          </small>
+        </div>
         <button
-          [disabled]="form.invalid"
-          (click)="register(form)"
+          [disabled]="registerForm.invalid"
+          (click)="register()"
           class="btn btn-warning w-100 my-3 fw-bold"
         >
           Sign In
