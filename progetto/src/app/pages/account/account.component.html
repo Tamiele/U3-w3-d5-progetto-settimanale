@@ -1,6 +1,9 @@
 <main class="d-flex flex-column align-items-center">
   <div class="container fade-in">
-    <h1 *ngIf="selectedProfile" class="text-warning text-start my-5">
+    <h1
+      *ngIf="selectedProfile"
+      class="text-warning text-start my-5 bg-black opacity-75 p-2 text-center"
+    >
       Welcome {{ selectedProfile.nome }}
     </h1>
 

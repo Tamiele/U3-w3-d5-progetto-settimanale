@@ -180,43 +180,18 @@
     },
     {
       "utenteId": 1,
-      "filmId": 2,
+      "filmId": 1,
       "id": 5
     },
     {
       "utenteId": 1,
-      "filmId": 1,
+      "filmId": 2,
       "id": 6
     },
     {
       "utenteId": 1,
       "filmId": 3,
       "id": 7
-    },
-    {
-      "utenteId": 1,
-      "filmId": 6,
-      "id": 8
-    },
-    {
-      "utenteId": 1,
-      "filmId": 5,
-      "id": 9
-    },
-    {
-      "utenteId": 1,
-      "filmId": 4,
-      "id": 10
-    },
-    {
-      "utenteId": 1,
-      "filmId": 7,
-      "id": 11
-    },
-    {
-      "utenteId": 1,
-      "filmId": 8,
-      "id": 12
     }
   ]
 }

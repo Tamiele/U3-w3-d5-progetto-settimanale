@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
           this.alertMessage = 'Questo film è già nei preferiti';
           return;
         }
-        // Se il film non è già nei preferiti, lo aggiungilo
+        // Se il film non è già nei preferiti, lo aggiungo
         const favorito: iFavorite = {
           utenteId: this.user!.id,
           filmId: idMovie,

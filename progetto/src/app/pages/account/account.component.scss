@@ -7,6 +7,10 @@ main {
   background-position: center;
 }
 
+h1 {
+  width: 450px;
+}
+
 .fade-in {
   opacity: 0;
   animation: fadeIn 1s forwards;

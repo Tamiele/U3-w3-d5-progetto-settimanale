@@ -44,8 +44,8 @@ export class AccountComponent implements OnInit {
     if (this.arrFavoriteMovies.length === 0) return;
     this.arrFavoriteMovies.forEach((favorito) =>
       this.movieSvc.detailMovie(favorito.filmId).subscribe(
-        (detailMovie) => {
-          this.arrMovie.push(detailMovie);
+        (filmPreferito) => {
+          this.arrMovie.push(filmPreferito);
         },
         (error) => {
           console.error(
